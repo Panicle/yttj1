@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>烟台特检登陆界面</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/yttj/lib/weui.min.css">
+    <link rel="stylesheet" href="/yttj/css/jquery-weui.css">
+    <link rel="stylesheet" href="/yttj/css/demos.css">
+
+</head>
+<script language="JavaScript" type="text/javascript">
+function toform1() {
+    window.open("form1.html");
+}
+</script>
+<body>
+<div class="weui-cells__title"><img style="height: 20px;width: 100px" src="/yttj/images/img_yttj.jpg" /></div>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">工号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入工号">
+        </div>
+    </div>
+</div>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="password" pattern="[0-9]*[a-zA-Z]*" placeholder="请输入密码">
+        </div>
+    </div>
+</div>
+<div class='demos-content-padded'>
+    <!--<a href="javascript:;" onclick="toform1()" class="weui-btn weui-btn_primary">登陆</a>-->
+    <a href="/form1" class="weui-btn weui-btn_primary">登陆</a>
+</div>
+</body>
+</html>

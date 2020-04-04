@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>发现问题</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/yttj/lib/weui.min.css">
+    <link rel="stylesheet" href="/yttj/css/jquery-weui.css">
+    <link rel="stylesheet" href="/yttj/css/demos.css">
+
+</head>
+<body>
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="name" class="weui-label">检验项目类别</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="job" type="text" value="">
+        </div>
+    </div>
+
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="name" class="weui-label">检验项目大分类</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="mobile" type="text" value="">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="name" class="weui-label">检验项目内容</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="in" type="text" value="">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="name" class="weui-label">检验项目内容明细</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="in" type="text" value="">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__bd">
+            <div class="weui-cell__hd"><label class="weui-label">检验项目问题描述</label></div>
+            <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
+            <div class="weui-textarea-counter"><span>0</span>/200</div>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">使用单位内部编号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" pattern="[0-9]*[a-zA-Z]" placeholder="请输入维保单位名称">
+        </div>
+    </div>
+    <div class='demos-content-padded'>
+        <!--<a href="javascript:;" onclick="toform1()" class="weui-btn weui-btn_primary">登陆</a>-->
+        <a href="/form1" class="weui-btn weui-btn_primary">返回首页</a>
+    </div>
+    <div class='demos-content-padded'>
+        <!--<a href="javascript:;" onclick="toform1()" class="weui-btn weui-btn_primary">登陆</a>-->
+        <a href="/form2" class="weui-btn weui-btn_primary">继续</a>
+    </div>
+</div>
+<script src="/yttj/lib/jquery-2.1.4.js"></script>
+<script src="/yttj/lib/fastclick.js"></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="/yttj/js/jquery-weui.js"></script>
+
+<script>
+    $("#job").select({
+        title: "选择职业",
+        items: ["法官", "医生", "猎人", "学生", "记者", "其他"],
+        onChange: function(d) {
+            console.log(this, d);
+        },
+        onClose: function() {
+            console.log("close");
+        },
+        onOpen: function() {
+            console.log("open");
+        },
+    });
+    $("#mobile").select({
+        title: "选择手机",
+        items: [
+            {
+                title: "iPhone 3GS",
+                value: "001",
+            },
+            {
+                title: "iPhone 5",
+                value: "002",
+            },
+            {
+                title: "iPhone 5S",
+                value: "003",
+            },
+            {
+                title: "iPhone 6",
+                value: "004",
+            },
+            {
+                title: "iPhone 6S",
+                value: "005",
+            },
+            {
+                title: "iPhone 6P",
+                value: "006",
+            },
+            {
+                title: "iPhone 6SP",
+                value: "007",
+            },
+            {
+                title: "iPhone SE",
+                value: "008",
+            },
+            {
+                title: "iPhone 7",
+                value: "009"
+            }
+        ]
+    });
+    $("#in").select({
+        title: "您的爱好",
+        multi: true,
+        min: 2,
+        max: 3,
+        items: [
+            {
+                title: "画画",
+                value: 1,
+                description: "额外的数据1"
+            },
+            {
+                title: "打球",
+                value: 2,
+                description: "额外的数据2"
+            },
+            {
+                title: "唱歌",
+                value: 3,
+                description: "额外的数据3"
+            },
+            {
+                title: "游泳",
+                value: 4,
+                description: "额外的数据4"
+            },
+            {
+                title: "健身",
+                value: 5,
+                description: "额外的数据5"
+            },
+            {
+                title: "睡觉",
+                value: 6,
+                description: "额外的数据6"
+            },
+        ],
+        beforeClose: function(values, titles) {
+            if(values.indexOf("6") !== -1) {
+                $.toast("不能选睡觉", "cancel");
+                return false;
+            }
+            return true;
+        },
+        onChange: function(d) {
+            console.log(this, d);
+        },
+        onClose: function (d) {
+            console.log('close')
+        }
+    });
+</script>
+</body>
+</html>
